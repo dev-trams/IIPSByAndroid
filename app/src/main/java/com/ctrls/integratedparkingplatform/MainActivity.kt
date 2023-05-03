@@ -108,7 +108,6 @@ class MainActivity : AppCompatActivity() {
      * @param textView 값이 없을 시 나오는 TextView
      * @param commit 값이 없을 시 나오는 문자(온도or습도)
      * */
-
     fun onDisConnectingChecked(value: String, progressBar: ProgressBar, textView: TextView, commit:String) {
         if(!(value.equals("") || value.isEmpty())){
             progressBar.isIndeterminate = false
