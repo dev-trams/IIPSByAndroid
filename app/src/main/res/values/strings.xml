@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">IntegratedParkingPlatform</string>
+    <string name="saturation_hint">주차장 포화도</string>
+</resources>
