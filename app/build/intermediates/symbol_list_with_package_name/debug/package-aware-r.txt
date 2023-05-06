@@ -2747,6 +2747,8 @@ drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_search_black_24
+drawable indore_climate_activity
+drawable indore_climate_default
 drawable m3_appbar_background
 drawable m3_avd_hide_password
 drawable m3_avd_show_password
@@ -2818,6 +2820,8 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable power_icon_radius_off
+drawable power_icon_radius_on
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
@@ -2921,6 +2925,8 @@ id bounceBoth
 id bounceEnd
 id bounceStart
 id buttonPanel
+id button_indore_close
+id button_indore_open
 id cache_measures
 id callMeasure
 id cancel_button
@@ -2947,6 +2953,8 @@ id compress
 id confirm_button
 id constraint
 id container
+id container_control_view_1
+id container_control_view_2
 id container_view_1
 id container_view_2
 id container_view_3
@@ -3047,6 +3055,8 @@ id image
 id immediateStop
 id included
 id indeterminate
+id indore_container_view_1
+id indore_container_view_2
 id info
 id invisible
 id inward
@@ -3281,6 +3291,7 @@ id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
 id text_view_humi
+id text_view_indore
 id text_view_temp
 id textinput_counter
 id textinput_error
@@ -3313,8 +3324,13 @@ id unlabeled
 id up
 id useLogo
 id vertical_only
+id view_indore_state
+id view_log_system
 id view_offset_helper
 id view_parking_state
+id view_power_stat_2
+id view_power_state_1
+id view_power_state_3
 id view_transition
 id view_tree_lifecycle_owner
 id view_tree_on_back_pressed_dispatcher_owner
@@ -3438,7 +3454,9 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_main
+layout activity_parking_indore_climate
 layout activity_parking_info
+layout activity_parking_membrane
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog

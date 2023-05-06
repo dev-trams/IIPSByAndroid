@@ -30,6 +30,12 @@
         android:theme="@style/Theme.IntegratedParkingPlatform"
         android:usesCleartextTraffic="true" >
         <activity
+            android:name="com.ctrls.integratedparkingplatform.Layouts.ParkingIndoreClimateActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.ctrls.integratedparkingplatform.Layouts.ParkingMembraneActivity"
+            android:exported="false" />
+        <activity
             android:name="com.ctrls.integratedparkingplatform.Layouts.ParkingInfoActivity"
             android:exported="false" />
         <activity

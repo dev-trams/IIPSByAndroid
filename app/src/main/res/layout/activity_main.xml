@@ -81,11 +81,6 @@
             android:layout_weight="1"
             android:orientation="vertical">
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1" />
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -137,6 +132,12 @@
 
                 </RelativeLayout>
             </LinearLayout>
+            <TextView
+                android:textSize="12sp"
+                android:id="@+id/view_log_system"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
         </LinearLayout>
 
         <RelativeLayout
@@ -147,8 +148,16 @@
             android:background="#efefef">
 
             <TextView
+                android:id="@+id/text_view_indore"
                 style="@style/basicView"
                 android:text="차수막 상태" />
+
+            <ImageView
+                android:visibility="gone"
+                android:id="@+id/view_indore_state"
+                android:src="@drawable/indore_climate_default"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
 
             <ProgressBar
                 android:id="@+id/progress_parking_state3"

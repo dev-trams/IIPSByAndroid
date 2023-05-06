@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.util.Log
 import android.view.View
+import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.ProgressBar
 import android.widget.RelativeLayout
@@ -13,7 +14,10 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.ctrls.integratedparkingplatform.HttpConn.RetrofitInit
+import com.ctrls.integratedparkingplatform.Layouts.ParkingIndoreClimateActivity
 import com.ctrls.integratedparkingplatform.Layouts.ParkingInfoActivity
+import com.ctrls.integratedparkingplatform.Layouts.ParkingMembraneActivity
+import com.ctrls.integratedparkingplatform.Utils.Utils
 import com.ctrls.integratedparkingplatform.VOModel.TestListModel
 
 import com.mikhaellopez.circularprogressbar.CircularProgressBar
@@ -32,9 +36,13 @@ class MainActivity : AppCompatActivity() {
     private lateinit var textView: TextView
     private lateinit var textViewValue2_1: TextView
     private lateinit var textViewValue2_2: TextView
+    private lateinit var viewIndoreState:ImageView
+    private lateinit var textViewIndore:TextView
+    private lateinit var progressBarStateValue3: ProgressBar
 
     private val mHandler = Handler()
-    private lateinit var mRunnable: Runnable
+
+//    private val utils = Utils()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,8 +50,8 @@ class MainActivity : AppCompatActivity() {
         onIdByInit()
 
         goActivity(container_view_1, ParkingInfoActivity::class.java)
-        goActivity(container_view_2, null)
-        goActivity(container_view_3, null)
+        goActivity(container_view_2, ParkingMembraneActivity::class.java)
+        goActivity(container_view_3, ParkingIndoreClimateActivity::class.java)
         retrofit()
 
     }
@@ -65,38 +73,45 @@ class MainActivity : AppCompatActivity() {
         }
     }
     private fun retrofit() {
-        val init:RetrofitInit = RetrofitInit()
-        val testListCall: Call<TestListModel> = init.userListModel
-        testListCall.enqueue(object : Callback<TestListModel> {
-            override fun onResponse(call: Call<TestListModel>, response: Response<TestListModel>) {
-                if(response.isSuccessful) {
-                    val testList = response.body()
+        val retrofitInit = RetrofitInit()
+        val call = retrofitInit.userListModel
+        call.enqueue(object : Callback<List<TestListModel>> {
+            override fun onResponse(call: Call<List<TestListModel>>, response: Response<List<TestListModel>>) {
+                if (response.isSuccessful) {
+                    val testList = response.body()?.getOrNull(0)
                     if (testList != null) {
                         progressBar.progress = testList.value1.toFloat()
                         val progressValue = progressBar.progress
                         val showProgressValue = "$progressValue %"
                         textView.text = showProgressValue
-                        val tempValue = testList.value3
-                        onDisConnectingChecked(tempValue, progressBarStateValue2_1, textViewValue2_1, "온도")
-                        val humiValue = testList.value4
-                        onDisConnectingChecked(humiValue, progressBarStateValue2_2, textViewValue2_2, "습도")
-
+                        onDisConnectingChecked(testList.value3, progressBarStateValue2_1, textViewValue2_1, "온도")
+                        onDisConnectingChecked(testList.value4, progressBarStateValue2_2, textViewValue2_2, "습도")
+                        onDisConnectingChecked(testList.value2, progressBarStateValue3, textViewIndore, "차수막 상태")
+                        if (testList.value2 == "Y") {
+                            viewIndoreState.setImageDrawable(getDrawable(R.drawable.indore_climate_activity))
+                            viewIndoreState.visibility = View.VISIBLE
+                        } else if(testList.value2 == "N") {
+                            viewIndoreState.setImageDrawable(getDrawable(R.drawable.indore_climate_default))
+                            viewIndoreState.visibility = View.VISIBLE
+                            textViewIndore.visibility = View.GONE
+                        }
                         Log.d("INFO_TAG", testList.value1)
                     } else {
-                        Log.e("ERROR_TAG", response.message())
+                        Log.e("ERROR_TAG", "Test list is null")
                     }
                 } else {
-                    Log.e("ERROR_TAG", response.message())
+                    Log.e("ERROR_TAG", "Response error: ${response.code()}")
                 }
             }
 
-            override fun onFailure(call: Call<TestListModel>, t: Throwable) {
+            override fun onFailure(call: Call<List<TestListModel>>, t: Throwable) {
                 call.cancel()
-                Log.e("TAG", t.message.toString())
+                Log.e("ERROR_TAG", "Retrofit failure: ${t.message}")
             }
         })
         mHandler.postDelayed({ retrofit() }, 2000L)
     }
+
     /**
      * 온도, 습도 공백, Null 체크 함수
      *
@@ -123,15 +138,18 @@ class MainActivity : AppCompatActivity() {
         container_view_1 = findViewById(R.id.container_view_1)
         container_view_2 = findViewById(R.id.container_view_2)
         container_view_3 = findViewById(R.id.container_view_3)
+
         progressBar = findViewById(R.id.progress_parking_state)
         progressBarStateValue2_1 = findViewById(R.id.progress_parking_state2_1)
         progressBarStateValue2_2 = findViewById(R.id.progress_parking_state2_2)
+        progressBarStateValue3 = findViewById(R.id.progress_parking_state3)
+
         textView = findViewById(R.id.view_parking_state)
         textViewValue2_1 = findViewById(R.id.text_view_temp)
         textViewValue2_2 = findViewById(R.id.text_view_humi)
+        textViewIndore = findViewById(R.id.text_view_indore)
+
+        viewIndoreState = findViewById(R.id.view_indore_state)
     }
-    override fun onDestroy() {
-        super.onDestroy()
-        mHandler.removeCallbacks(mRunnable)
-    }
+
 }

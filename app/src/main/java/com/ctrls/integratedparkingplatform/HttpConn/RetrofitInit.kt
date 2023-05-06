@@ -13,7 +13,7 @@ class RetrofitInit {
 
     val retrofit: Retrofit
         get() = Retrofit.Builder()
-            .baseUrl("https://ctrls-studio.com/")
+            .baseUrl("http://34.64.163.160/db.php/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
