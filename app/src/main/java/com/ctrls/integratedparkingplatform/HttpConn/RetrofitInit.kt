@@ -10,6 +10,22 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class RetrofitInit {
+    /*val CAR_VALUE: String
+        get() {
+            TODO()
+        }
+    val BARRIER_VALUE: String
+        get() {
+            TODO()
+        }
+    val TEMP_VALUE: String
+        get() {
+            TODO()
+        }
+    val HUMI_VALUE: String
+        get() {
+            TODO()
+        }*/
 
     val retrofit: Retrofit
         get() = Retrofit.Builder()
@@ -18,7 +34,16 @@ class RetrofitInit {
             .build()
 
     val networkService: INetworkService = retrofit.create(INetworkService::class.java)
-    val userListModel = networkService.doGetTest()
-//    val testListCall: Call<TestListModel> = init.userListModel
+    val iipListModel = networkService.doGetTest()
+//    val iipSendModel = networkService.sendData();
+    /*val iipSendModel =
+        networkService.sendData(
+            "iipTest",
+            CAR_VALUE,
+            BARRIER_VALUE,
+            TEMP_VALUE,
+            HUMI_VALUE
+        )*/
 
+    //    val testListCall: Call<TestListModel> = init.userListModel
 }

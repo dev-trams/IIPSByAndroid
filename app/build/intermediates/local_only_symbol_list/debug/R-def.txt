@@ -24,6 +24,7 @@ id container_view_fragment
 id container_view_logo
 id indore_container_view_1
 id indore_container_view_2
+id layout_scroll_log
 id progress_parking_state
 id progress_parking_state2_1
 id progress_parking_state2_2
@@ -31,6 +32,7 @@ id progress_parking_state3
 id text_view_humi
 id text_view_indore
 id text_view_temp
+id view_indore_img
 id view_indore_state
 id view_log_system
 id view_parking_state

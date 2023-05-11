@@ -28,12 +28,12 @@
         "source": "/Users/dev-trams/.gradle/daemon/7.5/com.ctrls.integratedparkingplatform.app-main-32:/mipmap-anydpi-v26/ic_launcher.xml"
     },
     {
-        "merged": "/Users/dev-trams/.gradle/daemon/7.5/com.ctrls.integratedparkingplatform.app-merged_res-30:/drawable_power_icon_radius_off.png.flat",
-        "source": "/Users/dev-trams/.gradle/daemon/7.5/com.ctrls.integratedparkingplatform.app-main-32:/drawable/power_icon_radius_off.png"
-    },
-    {
         "merged": "/Users/dev-trams/.gradle/daemon/7.5/com.ctrls.integratedparkingplatform.app-merged_res-30:/drawable_indore_climate_activity.png.flat",
         "source": "/Users/dev-trams/.gradle/daemon/7.5/com.ctrls.integratedparkingplatform.app-main-32:/drawable/indore_climate_activity.png"
+    },
+    {
+        "merged": "/Users/dev-trams/.gradle/daemon/7.5/com.ctrls.integratedparkingplatform.app-merged_res-30:/drawable_power_icon_radius_off.png.flat",
+        "source": "/Users/dev-trams/.gradle/daemon/7.5/com.ctrls.integratedparkingplatform.app-main-32:/drawable/power_icon_radius_off.png"
     },
     {
         "merged": "/Users/dev-trams/.gradle/daemon/7.5/com.ctrls.integratedparkingplatform.app-merged_res-30:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
@@ -42,6 +42,10 @@
     {
         "merged": "/Users/dev-trams/.gradle/daemon/7.5/com.ctrls.integratedparkingplatform.app-merged_res-30:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
         "source": "/Users/dev-trams/.gradle/daemon/7.5/com.ctrls.integratedparkingplatform.app-main-32:/mipmap-xxxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.ctrls.integratedparkingplatform.app-merged_res-30:/layout_activity_parking_indore_climate.xml.flat",
+        "source": "com.ctrls.integratedparkingplatform.app-main-32:/layout/activity_parking_indore_climate.xml"
     },
     {
         "merged": "/Users/dev-trams/.gradle/daemon/7.5/com.ctrls.integratedparkingplatform.app-merged_res-30:/layout_activity_parking_membrane.xml.flat",
@@ -60,12 +64,12 @@
         "source": "/Users/dev-trams/.gradle/daemon/7.5/com.ctrls.integratedparkingplatform.app-main-32:/mipmap-mdpi/ic_launcher.webp"
     },
     {
-        "merged": "/Users/dev-trams/.gradle/daemon/7.5/com.ctrls.integratedparkingplatform.app-merged_res-30:/mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "/Users/dev-trams/.gradle/daemon/7.5/com.ctrls.integratedparkingplatform.app-main-32:/mipmap-xxxhdpi/ic_launcher.webp"
-    },
-    {
         "merged": "/Users/dev-trams/.gradle/daemon/7.5/com.ctrls.integratedparkingplatform.app-merged_res-30:/mipmap-mdpi_ic_launcher_round.webp.flat",
         "source": "/Users/dev-trams/.gradle/daemon/7.5/com.ctrls.integratedparkingplatform.app-main-32:/mipmap-mdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/Users/dev-trams/.gradle/daemon/7.5/com.ctrls.integratedparkingplatform.app-merged_res-30:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "/Users/dev-trams/.gradle/daemon/7.5/com.ctrls.integratedparkingplatform.app-main-32:/mipmap-xxxhdpi/ic_launcher.webp"
     },
     {
         "merged": "/Users/dev-trams/.gradle/daemon/7.5/com.ctrls.integratedparkingplatform.app-merged_res-30:/drawable-v24_ic_launcher_foreground.xml.flat",
@@ -86,10 +90,6 @@
     {
         "merged": "/Users/dev-trams/.gradle/daemon/7.5/com.ctrls.integratedparkingplatform.app-merged_res-30:/mipmap-xhdpi_ic_launcher_round.webp.flat",
         "source": "/Users/dev-trams/.gradle/daemon/7.5/com.ctrls.integratedparkingplatform.app-main-32:/mipmap-xhdpi/ic_launcher_round.webp"
-    },
-    {
-        "merged": "com.ctrls.integratedparkingplatform.app-merged_res-30:/layout_activity_main.xml.flat",
-        "source": "com.ctrls.integratedparkingplatform.app-main-32:/layout/activity_main.xml"
     },
     {
         "merged": "/Users/dev-trams/.gradle/daemon/7.5/com.ctrls.integratedparkingplatform.app-merged_res-30:/drawable_ic_launcher_background.xml.flat",

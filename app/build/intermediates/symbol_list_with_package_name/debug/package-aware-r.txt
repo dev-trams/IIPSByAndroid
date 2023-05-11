@@ -3066,6 +3066,7 @@ id jumpToEnd
 id jumpToStart
 id labeled
 id layout
+id layout_scroll_log
 id left
 id leftToRight
 id left_to_right
@@ -3324,6 +3325,7 @@ id unlabeled
 id up
 id useLogo
 id vertical_only
+id view_indore_img
 id view_indore_state
 id view_log_system
 id view_offset_helper
